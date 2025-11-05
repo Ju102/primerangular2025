@@ -1,0 +1,24 @@
+<h1>Formulario con Binding</h1>
+
+<!-- Un formulario siempre debe tener un ID con la igualdad a ngForm -->
+<!-- Los controles deben tener una etiqueta ngModel apuntando al modelo -->
+<!-- Para indicar el model binding => [(ngModel)]="miModelo" -->
+<form #userForm="ngForm" (ngSubmit)="recibirDatos()"
+    style="background-color: darkcyan; width: 20%; padding: 20px; text-align: center;">
+
+    <label>Nombre: </label>
+    <input type="text" name="cajanombre" #cajanombre="ngModel" [(ngModel)]="user.nombre" /> <br />
+
+    <label>Apellidos: </label>
+    <input type="text" name="cajaapellidos" #cajaapellidos="ngModel" [(ngModel)]="user.apellidos" /> <br />
+
+    <label>Edad: </label>
+    <input type="text" name="cajaedad" #cajaedad="ngModel" [(ngModel)]="user.edad" /> <br /><br />
+    <button>Enviar</button>
+
+</form>
+<div style="background-color: darkslategrey;">
+    <h4>Nombre: {{ user.nombre }}</h4>
+    <h4>Apellidos: {{ user.apellidos }}</h4>
+    <h4>Edad: {{ user.edad }} años</h4>
+</div>

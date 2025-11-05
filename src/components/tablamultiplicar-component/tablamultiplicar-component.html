@@ -1,0 +1,47 @@
+<h2 style="color: bisque">Tabla de Multiplicar</h2>
+<form #tablaForm="ngForm">
+    <label style="color: bisque">Número: </label>
+    <input type="text" name="cajanumero" #cajanumero />
+    <button (click)="mostrarTabla()">Mostrar</button>
+</form>
+<div style="padding: 10px;">
+    @if ( resultados.length != 0 ) {
+    <h3 style="color: bisque;">Tabla con ngFor</h3>
+    <table border="1" style="background-color: white;">
+        <thead>
+            <tr>
+                <th>Operación</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let result of resultados; let i = index">
+                <td>{{ factor }} x {{ i+1 }}</td>
+                <td>{{ result }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    }
+
+    @if ( resultados.length != 0 ) {
+    <h3 style="color: bisque;">Tabla con for</h3>
+    <table border="1" style="background-color: white;">
+        <thead>
+            <tr>
+                <th>Operación</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(result of resultados; track result; let i = $index) {
+            <tr>
+                <td>{{ factor }} x {{ i+1 }}</td>
+                <td>{{ result }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
+    }
+</div>

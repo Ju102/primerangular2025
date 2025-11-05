@@ -1,0 +1,9 @@
+<form #sumarForm="ngForm">
+    <label>Número 1: </label>
+    <input type="number" name="cajanumero1" #cajanumero1>
+    <label>Numero 2: </label>
+    <input type="number" name="cajanumero2" #cajanumero2>
+    <button (click)="sumarNumeros()">Sumar</button>
+</form>
+<br><br>
+<h3>Resultado: {{ suma }}</h3>
